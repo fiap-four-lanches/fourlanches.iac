@@ -11,7 +11,7 @@ resource "azurerm_service_plan" "main_app_service" {
   resource_group_name        = var.resource_group.name
   location                   = var.resource_group.location
   os_type             = "Linux"
-  sku_name            = "P1v2"
+  sku_name            = "Y1"
 }
 
 resource "azurerm_linux_function_app" "auth_function" {
