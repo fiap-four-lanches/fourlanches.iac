@@ -12,10 +12,10 @@ variable "project_name" {
 
 variable "db_login" {
   description = "Database login"
-  type = string
+  type        = string
 }
 
 variable "db_password" {
   description = "Database password"
-  type = string
+  type        = string
 }
