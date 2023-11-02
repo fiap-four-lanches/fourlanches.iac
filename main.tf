@@ -23,3 +23,11 @@ module "functions" {
   resource_group = azurerm_resource_group.main
   project_name   = var.project_name
 }
+
+module "dbs" {
+  source         = "./modules/dbs"
+  project_name   = var.project_name
+  resource_group = azurerm_resource_group.main
+  db_login       = var.db_login
+  db_password    = var.db_password
+}
