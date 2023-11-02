@@ -1,13 +1,10 @@
-variable "location" {
-  description = "Name of the location where the resources will be provisioned"
-  type        = string
-  default     = "eastus"
+variable "resource_group" {
+  description = "The name of the Azure Resource Group"
 }
 
 variable "project_name" {
   description = "Name of the project"
-  type        = string
-  default     = "fourlanches"
+  type = string
 }
 
 variable "db_login" {
