@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "main_sa" {
-  name                     =  "${var.project_name}sa"
+  name                     =  "${var.resource_group.location}${var.project_name}sa"
   resource_group_name        = var.resource_group.name
   location                   = var.resource_group.location
   account_tier             = "Standard"
@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "main_sa" {
 }
 
 resource "azurerm_service_plan" "main_app_service" {
-  name                     = "${var.project_name}-app-service"
+  name                     = "${var.resource_group.location}-${var.project_name}-app-service"
   resource_group_name        = var.resource_group.name
   location                   = var.resource_group.location
   os_type             = "Linux"
@@ -15,7 +15,7 @@ resource "azurerm_service_plan" "main_app_service" {
 }
 
 resource "azurerm_linux_function_app" "auth_function" {
-  name                     = "${var.project_name}-auth-function"
+  name                     = "${var.resource_group.location}-${var.project_name}-auth-function"
   resource_group_name        = var.resource_group.name
   location                   = var.resource_group.location
   storage_account_name       = azurerm_storage_account.main_sa.name
