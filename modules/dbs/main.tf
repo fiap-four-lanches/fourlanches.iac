@@ -4,7 +4,7 @@ resource "azurerm_postgresql_server" "main_psqlserver" {
   resource_group_name = var.resource_group.name
   administrator_login          = var.db_login
   administrator_login_password = var.db_password
-  sku_name   = "B_Gen4_1"
+  sku_name   = "B_Gen5_1"
   version    = "11"
   ssl_enforcement_enabled          = true
   ssl_minimal_tls_version_enforced = "TLS1_2"
