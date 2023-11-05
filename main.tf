@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.0.2"
+      version = "~> 3.79.0"
     }
   }
   backend "azurerm" {
@@ -39,6 +39,17 @@ resource "azurerm_service_plan" "main_app_service" {
   os_type             = "Linux"
   sku_name            = "Y1"
 }
+
+resource "azurerm_api_management" "example" {
+  name                = "${var.location}-${var.project_name}-api-mgmt"
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
+  publisher_name      = "Four Lanches"
+  publisher_email     = "RM348623@fiap.com.br"
+
+  sku_name = "Developer_1"
+}
+
 module "dbs" {
   source         = "./modules/dbs"
   project_name   = var.project_name
@@ -64,3 +75,4 @@ module "k8s" {
   project_name   = var.project_name
   resource_group = azurerm_resource_group.main
 }
+
