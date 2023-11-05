@@ -12,10 +12,12 @@ variable "project_name" {
 
 variable "db_login" {
   description = "Database login"
+  sensitive   = true
   type        = string
 }
 
 variable "db_password" {
   description = "Database password"
+  sensitive   = true
   type        = string
 }
