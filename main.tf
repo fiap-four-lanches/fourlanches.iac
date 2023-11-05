@@ -43,8 +43,8 @@ module "dbs" {
   source         = "./modules/dbs"
   project_name   = var.project_name
   resource_group = azurerm_resource_group.main
-  db_login    = var.db_login
-  db_password = var.db_password
+  db_login       = var.db_login
+  db_password    = var.db_password
 }
 
 module "functions" {
