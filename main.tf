@@ -59,9 +59,8 @@ module "functions" {
 }
 
 
-# module "k8s" {
-#   source         = "./modules/k8s"
-#   project_name   = var.project_name
-#   resource_group = azurerm_resource_group.main
-
-# }
+module "k8s" {
+  source         = "./modules/k8s"
+  project_name   = var.project_name
+  resource_group = azurerm_resource_group.main
+}
