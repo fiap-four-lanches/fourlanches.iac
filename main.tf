@@ -5,11 +5,11 @@ terraform {
       version = "~> 3.79.0"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "eastus-fourlanches-rg"
-    storage_account_name = "eastusfourlanchessa"
-    container_name       = "terraform"
-    key                  = "terraform.tfstate"
+  cloud {
+    organization = "fourlanches"
+    workspaces {
+      name = "fourlanches-iac"
+    }
   }
 
   required_version = ">= 1.1.0"
