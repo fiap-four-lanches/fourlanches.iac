@@ -30,26 +30,31 @@ Before you begin, ensure you have the following prerequisites:
    ```
 
 ### Deploy Infrastructure
+1. Login to Terraform Cloud:
 
-1. Initialize the Terraform project:
+   ```shell
+   terraform login
+   ```
+
+2. Initialize the Terraform project:
 
    ```shell
    terraform init
    ```
 
-2. Plan the infrastructure changes:
+3. Plan the infrastructure changes:
 
    ```shell
    terraform plan -var-file=env.tfvars  
    ```
 
-3. Apply the changes to create the infrastructure:
+4. Apply the changes to create the infrastructure:
 
    ```shell
    terraform apply -var-file=env.tfvars  
    ```
 
-4. Confirm by typing "yes" when prompted.
+5. Confirm by typing "yes" when prompted.
 
 ### Destroy Infrastructure
 
