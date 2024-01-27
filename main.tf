@@ -40,16 +40,6 @@ resource "azurerm_service_plan" "main_app_service" {
   sku_name            = "Y1"
 }
 
-resource "azurerm_api_management" "main_api_management" {
-  name                = "${var.location}-${var.project_name}-api-mgmt"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  publisher_name      = "Four Lanches"
-  publisher_email     = "RM348623@fiap.com.br"
-
-  sku_name = "Developer_1"
-}
-
 module "dbs" {
   source         = "./modules/dbs"
   project_name   = var.project_name
