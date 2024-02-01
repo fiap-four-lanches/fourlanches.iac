@@ -25,7 +25,7 @@ resource "azurerm_mysql_flexible_server" "main_mysql_db" {
   administrator_login    = var.db_login
   administrator_password = var.db_password
   zone                   = "1"
-  version = 8.0
+  version = "8.0"
 }
 resource "azurerm_mysql_flexible_database" "main_mysql_db" {
   name                = "${var.project_name}-db"
